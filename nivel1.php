@@ -1,14 +1,14 @@
 <?php 
     //nivel1 ejercicio 1
     echo "Nivel1 Ejercicio 1 <br>";
-    $integer = 10;
-    echo $integer, "<br>";
-    $double = 20.5;
-    echo $double , "<br>";
-    $string = "esto es un string";
-    echo $string , "<br>";
-    $boolean = true;
-    echo $boolean, "<br>";
+    $varInt = 10;
+    echo $varInt, "<br>";
+    $varDouble = 20.5;
+    echo $varDouble , "<br>";
+    $varString = "esto es un string";
+    echo $varString , "<br>";
+    $varBoolean = true;
+    echo $varBoolean, "<br>";
     //nivel1 ejercicio 2
     echo "Nivel1 Ejercicio 2 <br>";
     $messege = 'Hello World! ';
@@ -17,36 +17,60 @@
     echo strrev($messege), "<br>";
     $messege = 'Hello World! ';
     $messege.= 'Este es el curso de PHP.';
-    echo $messege, "<br>";
+    echo $messege. "<br>";
     //nivel1 ejercicio 3
     echo "Nivel1 Ejercicio 3<br>";
-    $name = "Carlos";
-    echo "<h1><b>$name</b></h1>" ,"<br>";
+    const NOMBRE = "<h1><b>Carlos</b></h1>";
+    echo NOMBRE;
+    
     echo "Nivel1 Ejercicio 4<br>";
-    $x = 4;
-    $y = 6;
-    $n = 2.5;
-    $m = 4.5;
+    $x = rand(1,50);
+    $y = rand(1,50);
+    $n = 1.55;
+    $m = 3.88;
     echo "<b>Variables $n , $m , $y , $x . </b>","<br>";
-    //suma
-    echo "la suma de $x + $y es: ", $x + $y, "<br>";
-    echo "la suma de $n + $m es: ", $n + $m, "<br>";
-    //resta
-    echo "la resta de $x - $y es: ", $x - $y, "<br>";
-    echo "la resta de $n - $m es: ", $n - $m, "<br>";
-    //producto
-    echo "el producto de $x * $y es: ", $x * $y, "<br>";
-    echo "el producto $n * $m es: ", $n * $m, "<br>";
-    //modulo
-    echo "el modulo de $x / $y es: ", $x / $y, "<br>";
-    echo "el modulo de $n / $m es: ", $n / $m, "<br>";
-    echo "el doble de la variable $n = ", $n*2, "<br>";
-    echo "el doble de la variable $m = " ,$m*2, "<br>";
-    echo "el doble de la variable $x = " ,$x*2, "<br>";
-    echo "el doble de la variable $y = ", $y*2, "<br>";
-    echo "el doble de cada variables es: $n = ", $n*2," ; $m = " ,$m*2,"; $x = " ,$x*2,"; $y = ", $y*2,"<br>";
-    echo "la suma de todas las variables es: ", $n + $m + $x + $y, "<br>";
-    echo "el producto de todas las variables es: ", $n * $m * $x * $y, "<br>";
+    function suma ($v1, $v2){
+        $total = $v1 + $v2;
+        //echo "la suma de $v1 y $v2 es $total"."<br>";
+        return $total;
+    }
+    function resta ($v1, $v2){
+        $total = $v1 - $v2;
+        //echo "la resta de $v1 y $$v2 es $total"."<br>";
+        return $total;
+    }
+    function producto ($v1, $v2){
+        $total = $v1 * $v2;
+        //echo "el producto de $v1 y $v2 es $total"."<br>";
+        return $total;
+    }
+    function modulo ($v1, $v2){
+        $total = $v1 % $v2;
+        //echo "el modulo de $v1 y $v2 es $total"."<br>";
+        return $total;
+    }
+    function doble ($v1){
+        $total = $v1 * 2;
+        //echo "el doble de la variable $v1 es $total"  ."<br>";
+        return $total;
+    }
+    echo "la suma de $x y $y es ".suma($x,$y). "<br>";
+    echo "la suma de $n y $m es ".suma($n,$m). "<br>";
+    echo "la resta de $x y $y es ".resta($x,$y). "<br>";
+    echo "la resta de $n y $m es ".resta($n,$m). "<br>";
+    echo "el producto de $x y $y es ".producto($x,$y). "<br>";
+    echo "el producto de $n y $m es ".producto($n,$m). "<br>";
+    echo "el modulo de $x y $y es ".modulo($x,$y). "<br>";
+    echo "el modulo de $n y $m es ".modulo($n,$m). "<br>";
+    doble($x). "<br>";
+    doble($y). "<br>";
+    doble($n). "<br>";
+    doble($m). "<br>"; 
+    echo "la suma de todas las variables es: ".(suma($x,$y))+(suma($n,$m)). "<br>";
+    echo "la resta de todas las variables es: ".(resta($x,$y))-(resta($n,$m)). "<br>";
+    echo "el producto  de todas las variables es: ".(producto($x,$y))*(producto($n,$m)). "<br>";
+    echo "el modulo de todas las variables es: ".(modulo($x,$y))%(modulo($n,$m)). "<br>";
+    
     
     //ejercicio 5
     echo "Ejercicio 5";
@@ -58,6 +82,7 @@
     $arraymerge = array_merge($first,$second);
     var_dump($arraymerge);
     print_r($arraymerge) ;
+    echo "el numero de elementos dentro del array unido es ".count($arraymerge)."<br>";
     //nivel 2 ejercicio 1
     echo "Nivel 2  ejercicio1 <br>" ;
     $x = 1;
