@@ -85,20 +85,21 @@
     echo "el numero de elementos dentro del array unido es ".count($arraymerge)."<br>";
     //nivel 2 ejercicio 1
     echo "Nivel 2  ejercicio1 <br>" ;
-    $x = 1;
-    $y = 2;
-    $z = 3;
-    $w = 2;
+    function calcularSuma($x, $y){
+    if($y == $x){
+        $yx = ($y + $x)*2;
 
-    $xy = $x + $y;
-    echo $xy, "<br>";
-    $yz = $y + $z;
-    echo $yz, "<br>";
-    if($y == $w){
-        $yw = ($y + $w)*2;
-        echo $yw, "<br>";
+        echo $yx, "<br>";
     }
-    //nivel 2 ejercicio 2
+    else {
+        $yx= $y + $x;
+        echo $yx."<br>";
+        }
+    }
+     calcularSuma(1,2);
+     calcularSuma(3,2);
+     calcularSuma(2,2);
+        //nivel 2 ejercicio 2
     echo "Ejercicio2 <br>" ;
     
     /*$string1 = "wxyz";
@@ -112,7 +113,7 @@
     //nivel 3 ejercicio 1
     echo "Nivel 3 ejercicio1 <br>" ;
     $str = "Hello world";
-
+    $str = str_replace(' ', '',$str );
     $arr1 = str_split($str);
         print_r($arr1)."<br>";
     //nivel 2 ejercicio 2
@@ -126,7 +127,7 @@
     echo "Ejercicio3 <br>";
 
     $ejercicio3 = array (10, 20, 30, 40, 50);
-    unset($ejercicio3[3]);
+    array_splice($ejercicio3, 3, 1);
     echo "<pre>";
     var_dump ($ejercicio3);
 
